@@ -57,7 +57,7 @@ tImagteil gibImagteil(tComplex a) // Funkt. um Imagteil zurück zu geben
 }
 
 
-int complextesten()
+int tComplextesten()
 {
 	tComplex a,b;
 

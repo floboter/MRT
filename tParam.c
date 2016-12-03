@@ -100,6 +100,20 @@ ftype getfraktalvariante(tParam *p)
 	return p->fraktalvariante;
 }
 
+/*
+void setnamefraktalvariante(ftype f, tParam *p)
+{
+	p->fraktalvariante = f;
+}
+ftype getnamefraktalvariante(tParam *p)
+{
+	if(p->fraktalvariante == 0)
+	return apfel;
+	else if(p->fraktalvariante == 1)
+	return julia;
+}
+*/
+
 
 /* Testfunktion */
 

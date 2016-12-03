@@ -19,24 +19,47 @@ int main (void)
 {
 	/* Testfunktionen */
 
-	// complextesten();
+	// tComplextesten();
 	// tParamtesten();
+
+	// ParamDialog();
 
 	//return 0;
 
 	/*--- Variablendeklaration ---------------------------------------------*/
-	double xmin = -2;
-	double xmax = 2;
-	double ymin = -2;
-	double ymax = 2;
+
+	tParam parameter;
+	tComplex c1, z1;
+
   	/*--- Initialwerte -----------------------------------------------------*/
-	tComplex c, z;
+
+	parameter.fraktalvariante = apfel;
+	parameter.R = 4;
+	parameter.xmin = -2;
+	parameter.xmax = 2;
+	parameter.ymin = -2;
+	parameter.ymax = 2;
+	parameter.imax = 75;
+	parameter.xpoints = 640;
+	parameter.ypoints = 480;
+
+	c1.realteil = 0.4;
+	c1.imagteil = 0.4;
+	z1.realteil = 0;
+	z1.imagteil = 0;
+
   	/*----------------------------------------------------------------------*/
   	/*--- Parameter über Dialog abfragen                                  --*/
   	/*----------------------------------------------------------------------*/
+	if(ParamDialog(&parameter, &c1) == 0)
+	{
+		printf("bool ParamDialog == FALSE");
+		return EXIT_FAILURE;
+	}
 
 
-    InitGraph (xmin, xmax, ymin, ymax); 	// Initialisierung der Grafik
+
+    InitGraph (parameter.xmin, parameter.xmax, parameter.ymin, parameter.ymax); 	// Initialisierung der Grafik
     
     LockScreen(); // Bildschirm muss zum Setzen von Pixeln gesperrt sein
   	/*----------------------------------------------------------------------*/

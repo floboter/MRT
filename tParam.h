@@ -57,6 +57,10 @@ unsigned int getypoints(tParam *p);
 void setfraktalvariante(ftype f, tParam *p);
 ftype getfraktalvariante(tParam *p);
 
+/*
+void setnamefraktalvariante(ftype f, tParam *p);
+char* getnamefraktalvariante(tParam *p);
+*/
 
 
 

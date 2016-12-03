@@ -11,20 +11,32 @@
 #include "fraktal.h"
 #include "graphic.h"
 #include "dialog.h"
+#include "tParam.h"
+#include "tComplex.h"
 #include <stdio.h>
 
 int main (void)
 {
+	/* Testfunktionen */
+
+	// complextesten();
+	// tParamtesten();
+
+	//return 0;
+
 	/*--- Variablendeklaration ---------------------------------------------*/
-
+	double xmin = -2;
+	double xmax = 2;
+	double ymin = -2;
+	double ymax = 2;
   	/*--- Initialwerte -----------------------------------------------------*/
-
+	tComplex c, z;
   	/*----------------------------------------------------------------------*/
   	/*--- Parameter über Dialog abfragen                                  --*/
   	/*----------------------------------------------------------------------*/
 
 
-    InitGraph (/*xmin, xmax, ymin, ymax übergeben*/); 	// Initialisierung der Grafik
+    InitGraph (xmin, xmax, ymin, ymax); 	// Initialisierung der Grafik
     
     LockScreen(); // Bildschirm muss zum Setzen von Pixeln gesperrt sein
   	/*----------------------------------------------------------------------*/
@@ -40,3 +52,5 @@ int main (void)
 	
 	return 0;
 }
+
+

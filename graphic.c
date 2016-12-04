@@ -30,6 +30,7 @@ double xmin, xmax, ymin, ymax, deltax, deltay;
 
 void InitGraph (double Xmin, double Xmax, double Ymin, double Ymax)
 {
+	// printf("initGraph wird ausgeführt"); // DEBUG
 	if (SDL_Init(SDL_INIT_VIDEO)<0) printf("SDL_Init failed\n");
     if (!(screen = SDL_SetVideoMode(WIDTH, HEIGHT, DEPTH, SDL_HWSURFACE)))
     {

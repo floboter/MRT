@@ -14,6 +14,7 @@
 #include "tParam.h"
 #include "tComplex.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 int main (void)
 {
@@ -51,28 +52,52 @@ int main (void)
   	/*----------------------------------------------------------------------*/
   	/*--- Parameter über Dialog abfragen                                  --*/
   	/*----------------------------------------------------------------------*/
-	if(ParamDialog(&parameter, &c1) == 0)
+
+	int programmstatus = ParamDialog(&parameter, &c1); // int programmstatus gibt an, ob Nutzer Programm beendet oder OK gegeben hat
+
+	if(programmstatus == 1)
 	{
-		printf("bool ParamDialog == FALSE");
+		// printf("xmin, xmax, ymin, ymax: %lf,%lf,%lf,%lf\n", parameter.xmin, parameter.xmax, parameter.ymin, parameter.ymax); //DEBUG
+
+		InitGraph (parameter.xmin, parameter.xmax, parameter.ymin, parameter.ymax); // Initialisierung der Grafik
+
+
+		LockScreen(); // Bildschirm muss zum Setzen von Pixeln gesperrt sein
+		/*----------------------------------------------------------------------*/
+		/*--- Fraktale berechnen und ausgeben                                 --*/
+		/*----------------------------------------------------------------------*/
+		UnlockScreen(); // Alle Änderungen auf Bildschirm ausgeben
+	}
+	else if(programmstatus == 0)
+	{
 		return EXIT_FAILURE;
 	}
 
 
 
-    InitGraph (parameter.xmin, parameter.xmax, parameter.ymin, parameter.ymax); 	// Initialisierung der Grafik
-    
-    LockScreen(); // Bildschirm muss zum Setzen von Pixeln gesperrt sein
-  	/*----------------------------------------------------------------------*/
-  	/*--- Fraktale berechnen und ausgeben                                 --*/
-  	/*----------------------------------------------------------------------*/
-    UnlockScreen(); // Alle Änderungen auf Bildschirm ausgeben
-    
-    /*Aufrufen von InputChar() um das Programm nach dem öffnen der Graphik   */
-    /*anzuhalten. Erst wenn in der Konsole eine Taste gedrückt wird, schließt*/
-    /*sich das Fenster wieder. */
-    InputChar(); 
-    CloseGraph();
-	
+	/*Aufrufen von InputChar() um das Programm nach dem öffnen der Graphik   */
+	/*anzuhalten. Erst wenn in der Konsole eine Taste gedrückt wird, schließt*/
+	/*sich das Fenster wieder. */
+
+	InputChar(); // ist zwar vorgegebene Funkt. geht aber nicht
+
+	int grafikschliessen = 0;
+	printf("Um die Grafik zu schliessen, druecken Sie: 1\n");
+
+	while(grafikschliessen != 1)
+	{
+		scanf("%d", &grafikschliessen);
+		if(grafikschliessen == 1)
+		{
+			CloseGraph();
+		}else
+			printf("Falsche Eingabe.\n");
+	}
+
+
+
+
+
 	return 0;
 }
 

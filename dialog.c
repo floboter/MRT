@@ -1,4 +1,4 @@
-/* Datei: v3_dialo.c            */
+/* Datei: v3_dialog.c            */
 /* P. Rieger; TUD/PLT 4.10.2001 */
 
 /*****************************************************************************
@@ -51,20 +51,27 @@ void InputInt (int *value)
 
 
 /*--- Parameter Dialog ------------------------------------------------------*/
+/* Diese Funktion listet alle Parameter auf.
+ * Danach ermöglicht sie nach Eingabe einer Zahl entsprechend der Zeilennummer,
+ * den in dieser Zeile stehenden Parameter zu ändern. */
+
 
 bool ParamDialog(tParam *param, tComplex *z)
 {
-	int c = 1;
-	int cnt = 1;
-	double dtemp;
-	unsigned int uitemp;
-	while(c != 0)
+	int c = 0; // Ueberpruefungsvariable fuer Schleife
+	int cnt = 1; // Counter, fuer die Zeilennummer
+	int eingabe = 0; // eingabevariable
+	double dtemp; // temporaere double Zahl
+	unsigned int uitemp; // temporaere unsigned int Zahl
+
+
+	while(c == 0)
 	{
 		cnt = 1;
 		printf("Es folgen alle Parameter, die definiert wurden.\n"
 				"Geben Sie die Zeilennummer (Zahl in der Klammer) ein,\n"
 				"um den entsprechenden Parameter zu aendern.\n");
-		printf("Folgende Parameter sind definiert: \n");
+
 		printf("(%d): Realteil der komplexen Zahl c: %f\n", cnt, z->realteil); cnt++;
 		printf("(%d): Imaginaerteil der komplexen Zahl c: %f\n", cnt, z->imagteil); cnt++;
 		printf("(%d): Radius des Gebietes G: %f\n", cnt, getRadius(param)); cnt++;
@@ -77,13 +84,14 @@ bool ParamDialog(tParam *param, tComplex *z)
 		printf("(%d): Anzahl für Linien im Analysegebiet xpoints: %d\n", cnt, getxpoints(param)); cnt++;
 		printf("(%d): Anzahl für Linien im Analysegebiet ypoints: %d\n", cnt, getypoints(param)); cnt++;
 
-		printf("Welchen Parameter wollen Sie aendern?\n "
+		printf("Welchen Parameter wollen Sie aendern?\n"
 				"Geben Sie die Zeilennummer ein.\n"
 				"Möchten Sie nichts ändern, geben Sie '0' ein\n"
-				"Falls Sie das Programm abbrechen möchten, geben Sie '-1' ein\n");
-		scanf("%d", &cnt);
+				"Falls Sie das Programm abbrechen möchten, geben Sie '100' ein\n");
 
-		switch(cnt)
+		scanf("%d", &eingabe);
+
+		switch(eingabe)
 		{
 		case 1:
 			printf("Wert für den Realteil: ");
@@ -141,7 +149,7 @@ bool ParamDialog(tParam *param, tComplex *z)
 			break;
 		case 11:
 			printf("Wert für xpoints: ");
-			scanf("%d", &dtemp);
+			scanf("%d", &uitemp);
 			setxpoints(dtemp, param);
 			break;
 		case 12:
@@ -151,20 +159,33 @@ bool ParamDialog(tParam *param, tComplex *z)
 			break;
 		case 0:
 			printf("Programm OK\n");
-			return TRUE;
+			c = 1;
 			break;
-		case -1:
+		case 100:
+			c = 1;
 			printf("Programmabbruch\n");
-			return FALSE;
 			break;
+
 
 		default: printf("Fehler: Zeile nicht vorhanden.\n");
 
 		}
 
+
+
 	}
+	if(eingabe == 0)
+	{
+		return TRUE;
+	}
+
+	else if(eingabe == 100)
+	{
+		return FALSE;
+	}
+
 
 }
 
 
-/* v3_frakt.c */
+/* v3_diag.c */

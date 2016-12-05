@@ -66,6 +66,16 @@ int main (void)
 		/*----------------------------------------------------------------------*/
 		/*--- Fraktale berechnen und ausgeben                                 --*/
 		/*----------------------------------------------------------------------*/
+		while (TRUE){
+			if (GetItera(c1,z1,p)>=tParam.getimax()){           //Nur Entwurf. Funktioniert nicht. Bei idee ändern
+				break;
+			}
+			else {
+			Fraktal(c);							//TODO Fehlt noch einiges. Nur erste Idee
+												//Aktuell: Tausendmal mit Startwert in Fraktal, bisssschen unsinnig
+			}
+
+		}
 		UnlockScreen(); // Alle Änderungen auf Bildschirm ausgeben
 	}
 	else if(programmstatus == 0)

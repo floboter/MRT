@@ -19,20 +19,20 @@
 
 typedef enum {  black,         /*   0 schwarz         */
                 blue,          /*   1 blau            */
-                green,         /*   2 grn            */
+                green,         /*   2 gruen            */
                 cyan,          /*   3 cyan            */
                 red,           /*   4 rot             */
                 magenta,       /*   5 violett         */
                 brown,         /*   6 braun           */
-                white,         /*   7 wei            */
+                white,         /*   7 weiss            */
                 gray,          /*   8 grau            */
              	lightblue,     /*   9 hellblau        */
-             	lightgreen,    /*  10 hellgrn        */
+             	lightgreen,    /*  10 hellgruen        */
             	lightcyan,     /*  11 hellcyan        */
              	lightred,      /*  12 hellrot         */
             	lightmagenta,  /*  13 hellviolett     */
               	lightyellow,   /*  14 gelb            */
-            	brightwhite    /*  15 intensivwei    */
+            	brightwhite    /*  15 intensivweiss    */
       	      } tColor;
 
 

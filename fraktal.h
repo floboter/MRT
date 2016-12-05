@@ -12,6 +12,7 @@
 #define __fraktal
 
 /*--- Datentypvereinbarungen -----------------------------------------------*/
+tColor GetColorValue(int it, int it_max);
 
 /*--- Fraktal analysieren und grafisch darstellen --------------------------*/
 

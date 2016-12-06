@@ -37,7 +37,7 @@ tColor GetColorValue(int it, int it_max){
 
 /*--- Fraktal-Figur analysieren und zeichnen -------------------------------*/
 
-/*
+
 void Fraktal(tComplex *c, tComplex *z, tParam *p){
 	double istRadius;
 	int it = 0;

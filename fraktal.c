@@ -37,13 +37,15 @@ tColor GetColorValue(int it, int it_max){
 
 /*--- Fraktal-Figur analysieren und zeichnen -------------------------------*/
 
-void Fraktal(tComplex c, tComplex z, tParam p){
+
+void Fraktal(tComplex *c, tComplex *z, tParam *p){
 	double istRadius;
-	for(int it=0; it<=p.imax; it++){
+	int it = 0;
+	for(it=0; it <= getimax(&p); it++){
 
-		istRadius= betrag(z);
+		istRadius = betrag(z);
 
-		if (istRadius>=(double)p.R){
+		if (istRadius>=(double)getRadius(&p)){
 			SetPoint((double)z.realteil,(double)z.imagteil, GetColorValue(GetItera(c,z,p), getimax(p)));
 		}
 		NextComplex(c,z);

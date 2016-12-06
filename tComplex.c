@@ -15,7 +15,7 @@
 
 double betrag (tComplex a) // Funkt. für Berechnung des Betrags
 {
-	return (sqrt((a.realteil)*(a.realteil)+(a.imagteil)*(a.imagteil)));
+	// return (sqrt((a.realteil)*(a.realteil)+(a.imagteil)*(a.imagteil)));
 }
 
 /*
@@ -26,7 +26,7 @@ double winkel (tComplex a) // Funkt. für Berechnung des Winkels
 {
 	if(abs(a.realteil) > 10.0e-10) // überprüfung, ob realteil größer als Null
 	{
-		return (atan((a.imagteil/(a.realteil)))); // gib winkel in RAD
+		// return (atan((a.imagteil/(a.realteil)))); // gib winkel in RAD
 	}
 	else if(a.imagteil>0) // überprüfung, ob imagteil größer Null
 	{

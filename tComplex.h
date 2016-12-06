@@ -18,11 +18,13 @@ typedef struct
 
 } tComplex;
 
+/* TODO Funktionen */
+
 double betrag (tComplex a); // Funkt. für Berechnung des Betrags
 double winkel (tComplex a); // Funkt. für Berechnung des Winkels
 
-tRealteil gibRealteil(tComplex a); // Funkt. um Realteil zurück zu geben
-tImagteil gibImagteil(tComplex a); // Funkt. um Imagteil zurück zu geben
+tRealteil getRealteil(tComplex a); // Funkt. um Realteil zurück zu geben
+tImagteil getImagteil(tComplex a); // Funkt. um Imagteil zurück zu geben
 
 
 #endif /* TCOMPLEX_H_ */

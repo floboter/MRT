@@ -9,6 +9,8 @@
 #ifndef __fraktal
 #define __fraktal
 #include "graphic.h"
+#include "tComplex.h"
+#include "tParam.h"
 
 /*--- Datentypvereinbarungen -----------------------------------------------*/
 int GetItera(tComplex c, tComplex z, tParam p);

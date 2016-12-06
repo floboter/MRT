@@ -56,6 +56,8 @@ int main (void)
 
 	int programmstatus = ParamDialog(&parameter, &c1); // int programmstatus gibt an, ob Nutzer Programm beendet oder OK gegeben hat
 
+	printf("%d", programmstatus); // DEBUG
+
 	if(programmstatus == 1)
 	{
 		// printf("xmin, xmax, ymin, ymax: %lf,%lf,%lf,%lf\n", parameter.xmin, parameter.xmax, parameter.ymin, parameter.ymax); //DEBUG
@@ -68,7 +70,7 @@ int main (void)
 		/*--- Fraktale berechnen und ausgeben                                 --*/
 		/*---------------*/
 
-		Fraktal(c1,z1,parameter);
+		Fraktal(&c1,&z1,&parameter);
 
 
 

@@ -21,7 +21,7 @@ int main (void)
 {
 	/* Testfunktionen */
 
-	// tComplextesten();
+	 tComplextesten();
 	// tParamtesten();
 
 	// ParamDialog();

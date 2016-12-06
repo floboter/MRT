@@ -15,7 +15,12 @@
 
 double betrag (tComplex a) // Funkt. für Berechnung des Betrags
 {
-	// return (sqrt((a.realteil)*(a.realteil)+(a.imagteil)*(a.imagteil)));
+	return (sqrt((a.realteil)*(a.realteil)+(a.imagteil)*(a.imagteil)));
+}
+
+double betragberechnen (tComplex *a)
+{
+	return (sqrt(getRealteil(&a)*getRealteil(&a)+getImagteil(&a)*getImagteil(&a)));
 }
 
 /*
@@ -26,7 +31,7 @@ double winkel (tComplex a) // Funkt. für Berechnung des Winkels
 {
 	if(abs(a.realteil) > 10.0e-10) // überprüfung, ob realteil größer als Null
 	{
-		// return (atan((a.imagteil/(a.realteil)))); // gib winkel in RAD
+		return (atan(a.imagteil/a.realteil)); // gib winkel in RAD
 	}
 	else if(a.imagteil>0) // überprüfung, ob imagteil größer Null
 	{
@@ -39,21 +44,51 @@ double winkel (tComplex a) // Funkt. für Berechnung des Winkels
 
 }
 
+double winkelberechnen(tComplex *a) // alternative Fkt.
+{
+	if(abs(getRealteil(&a)) > 10.0e-10) // überprüfung, ob realteil größer als Null
+		{
+			return (atan((getImagteil(&a))/(getRealteil(&a)))); // gib winkel in RAD
+		}
+		else if(getImagteil(&a)>0) // überprüfung, ob imagteil größer Null
+		{
+			return M_PI/2; // gib pi/2
+		}
+		else
+		{
+			return 3/2*M_PI; // ansonten gib 3/2 pi
+		}
+}
+
 /*
  * Funktion gibt den Realteil der komplexen Zahl zurück
  */
 
-tRealteil gibRealteil(tComplex a) // Funkt. um Realteil zurück zu geben
+tRealteil getRealteil(tComplex *a) // Funkt. um Realteil zurück zu geben
 {
-	return a.realteil;
+	return a->realteil;
 }
 
 /*
  * Funktion gibt den Imagteil der komplexen Zahl zurück
  */
-tImagteil gibImagteil(tComplex a) // Funkt. um Imagteil zurück zu geben
+tImagteil getImagteil(tComplex *a) // Funkt. um Imagteil zurück zu geben
 {
-	return a.imagteil;
+	return a->imagteil;
+}
+
+
+
+
+
+void setRealteil(tRealteil real, tComplex *a)
+{
+	a->realteil = real;
+}
+
+void setImagteil(tImagteil imag, tComplex *a)
+{
+	a->imagteil = imag;
 }
 
 

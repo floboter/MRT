@@ -10,7 +10,8 @@
 
 #include "fraktal.h"
 #include "graphic.h"
-
+#include "tParam.h"
+#include "tComplex.h"
 
 /*--- Interne Funktion: Analyse der Iterationsanzahl -----------------------*/
 int GetItera(tComplex c, tComplex z, tParam p){ //Wichtig, dass return int.
@@ -37,10 +38,22 @@ tColor GetColorValue(int it, int it_max){
 /*--- Fraktal-Figur analysieren und zeichnen -------------------------------*/
 
 void Fraktal(tComplex c, tComplex z, tParam p){
-	 					//TODO Von Komplexen Zahl zu Koordinaten
-	SetPoint();			//TODO Koordinaten einarbeiten und richtige Farbe
-						//TODO C und z aufaddieren
+	double istRadius;
+	for(int it=0; it<=p.imax; it++){
 
+		istRadius= betrag(z);
+
+		if (istRadius>=(double)p.R){
+			SetPoint((double)z.realteil,(double)z.imagteil, GetColorValue(GetItera(c,z,p), getimax(p)));
+		}
+		NextComplex(c,z);
+	}
+
+
+}
+
+void NextComplex(tComplex c, tComplex z){
+	z=z*z+c;
 }
 
 /* v3_frakt.c */

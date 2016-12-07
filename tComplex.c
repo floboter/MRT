@@ -13,17 +13,8 @@
 
 
 
-double betrag (tComplex a) // Funkt. für Berechnung des Betrags
-{
-	return (sqrt((a.realteil)*(a.realteil)+(a.imagteil)*(a.imagteil)));
-}
 
-double betragberechnen (tComplex *a)
-{
-	return (sqrt(getRealteil(&a)*getRealteil(&a)+getImagteil(&a)*getImagteil(&a)));
-}
-
-double betragberechnen2 (tComplex *a)
+double betrag (tComplex *a)
 {
 	return (sqrt((a->realteil)*(a->realteil)+(a->imagteil)*(a->imagteil)));
 }
@@ -32,30 +23,15 @@ double betragberechnen2 (tComplex *a)
  * double winkel nimmt complexe zahl "a". berechnet den winkel der Zahl. Überprüft dabei, ob der Realteil größer ist als null.
  * ansonsten wird der winkel je nach vorzeichn vom imagteil ausgegeben.
  */
-double winkel (tComplex a) // Funkt. für Berechnung des Winkels
-{
-	if(abs(a.realteil) > 10.0e-10) // überprüfung, ob realteil größer als Null
-	{
-		return (atan(a.imagteil/a.realteil)); // gib winkel in RAD
-	}
-	else if(a.imagteil>0) // überprüfung, ob imagteil größer Null
-	{
-		return M_PI/2; // gib pi/2
-	}
-	else
-	{
-		return 3/2*M_PI; // ansonten gib 3/2 pi
-	}
 
-}
 
-double winkelberechnen(tComplex *a) // alternative Fkt.
+double winkel(tComplex *a) // alternative Fkt.
 {
-	if(abs(getRealteil(&a)) > 10.0e-10) // überprüfung, ob realteil größer als Null
+	if(abs(a->realteil) > 10.0e-10) // überprüfung, ob realteil größer als Null
 		{
-			return (atan((getImagteil(&a))/(getRealteil(&a)))); // gib winkel in RAD
+			return (atan((a->imagteil)/(a->realteil))); // gib winkel in RAD
 		}
-		else if(getImagteil(&a)>0) // überprüfung, ob imagteil größer Null
+		else if(a->imagteil>0) // überprüfung, ob imagteil größer Null
 		{
 			return M_PI/2; // gib pi/2
 		}
@@ -111,10 +87,10 @@ int tComplextesten()
 	printf("realteil von a: %f\n", a.realteil);
 	printf("imagteil von a: %f\n", a.imagteil);
 
-	printf("Winkel von a: %f\n", winkel(a));
-	printf("Betrag von a: %f\n", betrag(a));
-	printf("Winkel von b: %f\n", winkel(b));
-	printf("Betrag von b: %f\n", betrag(b));
+	printf("Winkel von a: %f\n", winkel(&a));
+	printf("Betrag von a: %f\n", betrag(&a));
+	printf("Winkel von b: %f\n", winkel(&b));
+	printf("Betrag von b: %f\n", betrag(&b));
 
 		return 0;
 }

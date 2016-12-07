@@ -91,6 +91,8 @@ bool ParamDialog(tParam *param, tComplex *z)
 
 		scanf("%d", &eingabe);
 
+
+		// TODO fraktalvariante fallunterscheidung ob c geaendert werden darf
 		switch(eingabe)
 		{
 		case 1:

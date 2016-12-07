@@ -22,6 +22,7 @@ typedef struct
 
 double betrag (tComplex a); // Funkt. für Berechnung des Betrags
 double betragberechnen (tComplex *a); // alternative Fkt.
+double betragberechnen2 (tComplex *a); // alternative Fkt.
 
 double winkel (tComplex a); // Funkt. für Berechnung des Winkels
 double winkelberechnen(tComplex *a); // alternative Fkt.

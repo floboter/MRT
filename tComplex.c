@@ -23,6 +23,11 @@ double betragberechnen (tComplex *a)
 	return (sqrt(getRealteil(&a)*getRealteil(&a)+getImagteil(&a)*getImagteil(&a)));
 }
 
+double betragberechnen2 (tComplex *a)
+{
+	return (sqrt((a->realteil)*(a->realteil)+(a->imagteil)*(a->imagteil)));
+}
+
 /*
  * double winkel nimmt complexe zahl "a". berechnet den winkel der Zahl. Überprüft dabei, ob der Realteil größer ist als null.
  * ansonsten wird der winkel je nach vorzeichn vom imagteil ausgegeben.
@@ -79,7 +84,7 @@ tImagteil getImagteil(tComplex *a) // Funkt. um Imagteil zurück zu geben
 
 
 
-
+/* TODO Die "set" Funktionen sind nur als Ergaenzung (Notwendigkeit kann noch diskutiert werden) */
 
 void setRealteil(tRealteil real, tComplex *a)
 {

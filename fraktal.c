@@ -52,7 +52,7 @@ int GetItera( tComplex *c, tComplex *z, tParam *param){
  double zrealTmp, a,b;
  while(i<=param->imax){
 	 if((z->realteil*z->realteil+z->imagteil*z->imagteil)>(param->R*param->R)){
-	     printf("Zeichne: %d \n",i);//DEBUG
+	     printf("Itera: %d \n",i);//DEBUG
 	     printf("C= %g+j%g \n",c->realteil,c->imagteil);//DEBUG
 	     printf("Z= %g+j%g \n",z->realteil,z->imagteil);//DEBUG
 		 break;
@@ -92,7 +92,7 @@ void Fraktal( tComplex *c, tComplex *z, tParam *p){
 		  double a=(x/(double)getxpoints(p))*(double)(getxmax(p)-getxmin(p))+getxmin(p);
 
 		  double b=y/(double)getypoints(p)*(double)(getymax(p)-getymin(p))+getymin(p);
-		  //printf("Position: %g %g \n",a,b);//DEBUG
+		  printf("Position: %g %g \n",a,b);//DEBUG
 
 		  if(getfraktalvariante(p)==apfel){
 			  setRealteil(a,c);

@@ -32,7 +32,7 @@ void setimax(unsigned int i, tParam *p)
 {
 	p->imax = i;
 }
-unsigned int getimax(tParam *p)
+unsigned int getimax( tParam *p)
 {
 	return p->imax;
 }

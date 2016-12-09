@@ -36,7 +36,7 @@ int main (void)
   	/*--- Initialwerte -----------------------------------------------------*/
 
 	parameter.fraktalvariante = apfel;
-	parameter.R = 4;
+	parameter.R = 2;
 	parameter.xmin = -2;
 	parameter.xmax = 2;
 	parameter.ymin = -2;
@@ -99,6 +99,7 @@ int main (void)
 		if(grafikschliessen == 1)
 		{
 			CloseGraph();
+			printf("Programm beendet.\n");
 		}else
 			printf("Falsche Eingabe.\n");
 	}

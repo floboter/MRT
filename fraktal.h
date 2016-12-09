@@ -13,11 +13,11 @@
 #include "tParam.h"
 
 /*--- Datentypvereinbarungen -----------------------------------------------*/
-int GetItera(tComplex c, tComplex z, tParam p);
+int GetItera( tComplex *c, tComplex *z, tParam *param);
 tColor GetColorValue(int it, int it_max);
 
 /*--- Fraktal analysieren und grafisch darstellen --------------------------*/
-void Fraktal(tComplex c, tComplex z, tParam p);
+void Fraktal( tComplex *c, tComplex *z, tParam *p);
 
 #endif
 

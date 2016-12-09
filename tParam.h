@@ -34,7 +34,7 @@ void setRadius(tRadius r, tParam *p);
 tRadius getRadius(tParam *p);
 
 void setimax(unsigned int i, tParam *p);
-unsigned int getimax(tParam *p);
+unsigned int getimax( tParam *p);
 
 void setxmin(double x_min, tParam *p);
 double getxmin(tParam *p);

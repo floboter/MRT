@@ -65,6 +65,7 @@ tImagteil getImagteil(tComplex *a) // Funkt. um Imagteil zurück zu geben
 void setRealteil(tRealteil real, tComplex *a)
 {
 	a->realteil = real;
+	//printf("Realteil: %g\n",real);//DEBUG
 }
 
 void setImagteil(tImagteil imag, tComplex *a)

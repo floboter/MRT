@@ -71,7 +71,7 @@ int GetItera(tComplex *c, tComplex *z, tParam *param){
 
 
  }
- printf("Itera: %d \n",i);//DEBUG
+ // printf("Itera: %d \n",i);//DEBUG
  return i;
 
 }
@@ -100,7 +100,7 @@ void Fraktal(tComplex *c, tComplex *z, tParam *p){
 		  double a = x/(double)getxpoints(p)*(getxmax(p)-getxmin(p))+getxmin(p);
 
 		  double b = y/(double)getypoints(p)*(getymax(p)-getymin(p))+getymin(p);
-		  printf("Position: %g %g \n",a,b);//DEBUG
+		  // printf("Position: %g %g \n",a,b);//DEBUG
 
 		  int i = GetItera(c,z,p);
 

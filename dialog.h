@@ -14,9 +14,15 @@
 #include "fraktal.h"
 
 /*--- Parameter Dialog Prototyp --------------------------------------------*/
+/*--- Definitionen ---------------------------------------------------------*/
+
+typedef enum {FALSE, TRUE} bool;
+bool ParamDialog(tParam *ptr_param, tComplex *z);
 
 /*--- Funktion zum einlesen des ersten Characters einer getchar() Eingabe --*/
 char InputChar();
+void InputDouble (double *value);
+void InputInt (int *value);
 
 #endif
 

@@ -17,7 +17,6 @@
 
 /*--- Definitionen ---------------------------------------------------------*/
 
-typedef enum {FALSE, TRUE} bool;
 
 
 /*--- Tastatureingabe lesen und nur ersten Character beachten --------------*/
@@ -97,23 +96,24 @@ bool ParamDialog(tParam *ptr_param, tComplex *z)
 		{
 
 		case 1:
-			if(getfraktalvariante(ptr_param) == apfel)
+			/* if(getfraktalvariante(ptr_param) == apfel)
 			{
 				printf("Fraktaltyp = apfel.\n"
 						"Realteil fuer c = 0.4 (Initialwert)\n");
 				break;
 			}
+			*/
 			printf("Wert für den Realteil: ");
 			scanf("%lf", &dtemp);
 			z->realteil = (tRealteil)dtemp;
 			break;
 		case 2:
-			if(getfraktalvariante(ptr_param) == apfel)
+			/*if(getfraktalvariante(ptr_param) == apfel)
 			{
 				printf("Fraktaltyp = apfel.\n"
 						"Imagteil fuer c = 0.4 (Initialwert)\n");
 				break;
-			}
+			}*/
 			printf("Wert für den Imaginaerteil: ");
 			scanf("%lf", &dtemp);
 			z->imagteil = (tImagteil)dtemp;
@@ -159,7 +159,7 @@ bool ParamDialog(tParam *ptr_param, tComplex *z)
 			break;
 		case 10:
 			printf("Wert für xpoints: ");
-			scanf("%d", &dtemp);
+			scanf("%lf", &dtemp);
 			setxpoints(dtemp, ptr_param);
 			break;
 		case 11:

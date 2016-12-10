@@ -42,8 +42,8 @@ int main (void)
 	parameter.ymin = -2;
 	parameter.ymax = 2;
 	parameter.imax = 75;
-	parameter.xpoints = 640;
-	parameter.ypoints = 480;
+	parameter.xpoints = 1024; // Geaendert vom vorgegebenen Initialwert (Streifen in Ausgabe)
+	parameter.ypoints = 720; // Geaendert vom vorgegebenen Initialwert (Streifen in Ausgabe)
 
 	c1.realteil = 0.4;
 	c1.imagteil = 0.4;
@@ -55,7 +55,7 @@ int main (void)
   	/*----------------------------------------------------------------------*/
 
 
-	int programmstatus = (int)ParamDialog(&parameter, &c1); // int programmstatus gibt an, ob Nutzer Programm beendet oder OK gegeben hat
+	bool programmstatus = ParamDialog(&parameter, &c1); // bool programmstatus gibt an, ob Nutzer Programm beendet oder OK gegeben hat
 
 
 	printf("%d", programmstatus); // DEBUG

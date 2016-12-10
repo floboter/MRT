@@ -18,7 +18,7 @@ typedef struct
 
 } tComplex;
 
-/* TODO Funktionen */
+/* Funktionen */
 
 double betrag(tComplex *a);  // Funkt. für Berechnung des Betrags
 

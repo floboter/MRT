@@ -36,7 +36,7 @@ int main (void)
   	/*--- Initialwerte -----------------------------------------------------*/
 
 	parameter.fraktalvariante = apfel;
-	parameter.R = 2;
+	parameter.R = 4;
 	parameter.xmin = -2;
 	parameter.xmax = 2;
 	parameter.ymin = -2;
@@ -54,7 +54,9 @@ int main (void)
   	/*--- Parameter über Dialog abfragen                                  --*/
   	/*----------------------------------------------------------------------*/
 
-	int programmstatus = ParamDialog(&parameter, &c1); // int programmstatus gibt an, ob Nutzer Programm beendet oder OK gegeben hat
+
+	int programmstatus = (int)ParamDialog(&parameter, &c1); // int programmstatus gibt an, ob Nutzer Programm beendet oder OK gegeben hat
+
 
 	printf("%d", programmstatus); // DEBUG
 
@@ -88,7 +90,7 @@ int main (void)
 	/*anzuhalten. Erst wenn in der Konsole eine Taste gedrückt wird, schließt*/
 	/*sich das Fenster wieder. */
 
-	InputChar(); // ist zwar vorgegebene Funkt. geht aber nicht
+	//InputChar(); // ist zwar vorgegebene Funkt. geht aber nicht
 
 	int grafikschliessen = 0;
 	printf("Um die Grafik zu schliessen, druecken Sie: 1\n");

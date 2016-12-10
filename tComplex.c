@@ -60,7 +60,7 @@ tImagteil getImagteil(tComplex *a) // Funkt. um Imagteil zurück zu geben
 
 
 
-/* TODO Die "set" Funktionen sind nur als Ergaenzung (Notwendigkeit kann noch diskutiert werden) */
+/* Mit den "set" Funktionen, kann der Real- oder Imagteil gesetzt werden */
 
 void setRealteil(tRealteil real, tComplex *a)
 {

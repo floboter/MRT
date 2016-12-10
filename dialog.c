@@ -100,7 +100,7 @@ bool ParamDialog(tParam *ptr_param, tComplex *z)
 			if(getfraktalvariante(ptr_param) == apfel)
 			{
 				printf("Fraktaltyp = apfel.\n"
-						"Realteil fuer c = 0.4 (Initialwert)");
+						"Realteil fuer c = 0.4 (Initialwert)\n");
 				break;
 			}
 			printf("Wert für den Realteil: ");
@@ -111,7 +111,7 @@ bool ParamDialog(tParam *ptr_param, tComplex *z)
 			if(getfraktalvariante(ptr_param) == apfel)
 			{
 				printf("Fraktaltyp = apfel.\n"
-						"Imagteil fuer c = 0.4 (Initialwert)");
+						"Imagteil fuer c = 0.4 (Initialwert)\n");
 				break;
 			}
 			printf("Wert für den Imaginaerteil: ");
@@ -158,16 +158,11 @@ bool ParamDialog(tParam *ptr_param, tComplex *z)
 			setymax(dtemp, ptr_param);
 			break;
 		case 10:
-			printf("Wert für xmin: ");
-			scanf("%lf", &dtemp);
-			setxmin(dtemp, ptr_param);
-			break;
-		case 11:
 			printf("Wert für xpoints: ");
-			scanf("%d", &uitemp);
+			scanf("%d", &dtemp);
 			setxpoints(dtemp, ptr_param);
 			break;
-		case 12:
+		case 11:
 			printf("Wert für ypoints: ");
 			scanf("%lf", &dtemp);
 			setypoints(dtemp, ptr_param);
@@ -175,11 +170,11 @@ bool ParamDialog(tParam *ptr_param, tComplex *z)
 		case 0:
 			printf("Programm OK\n");
 			c = 1;
-			break;
+			return TRUE;
 		case 100:
 			c = 1;
 			printf("Programmabbruch\n");
-			break;
+			return FALSE;
 
 
 		default: printf("Fehler: Zeile nicht vorhanden.\n");
@@ -189,18 +184,13 @@ bool ParamDialog(tParam *ptr_param, tComplex *z)
 
 
 	}
-	if(eingabe == 0)
-	{
-		return TRUE;
-	}
-
-	else if(eingabe == 100)
-	{
-		return FALSE;
-	}
 
 
 }
+
+
+
+
 
 
 

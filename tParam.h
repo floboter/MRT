@@ -30,6 +30,7 @@ typedef struct
 
 /* Funktionen */
 
+
 void setRadius(tRadius r, tParam *p);
 tRadius getRadius(tParam *p);
 

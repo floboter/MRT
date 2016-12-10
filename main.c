@@ -26,7 +26,7 @@ int main (void)
 
 	// ParamDialog();
 
-	//return 0;
+	// return 0;
 
 	/*--- Variablendeklaration ---------------------------------------------*/
 
@@ -34,6 +34,7 @@ int main (void)
 	tComplex c1, z1;
 
   	/*--- Initialwerte -----------------------------------------------------*/
+	printf("Initialwerte werden gesetzt\n");
 
 	parameter.fraktalvariante = apfel;
 	parameter.R = 4;
@@ -54,11 +55,12 @@ int main (void)
   	/*--- Parameter über Dialog abfragen                                  --*/
   	/*----------------------------------------------------------------------*/
 
+	printf("ParamDialog wird ausgefuehrt\n");
 
 	bool programmstatus = ParamDialog(&parameter, &c1); // bool programmstatus gibt an, ob Nutzer Programm beendet oder OK gegeben hat
 
 
-	printf("%d", programmstatus); // DEBUG
+	//printf("%d", programmstatus); // DEBUG
 
 	if(programmstatus == 1)
 	{
@@ -71,6 +73,7 @@ int main (void)
 		/*----------------------------------------------------------------------*/
 		/*--- Fraktale berechnen und ausgeben                                 --*/
 		/*---------------*/
+		printf("Fraktale werden berechnet\n");
 
 		Fraktal(&c1,&z1,&parameter);
 

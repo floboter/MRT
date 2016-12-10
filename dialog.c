@@ -90,8 +90,6 @@ bool ParamDialog(tParam *ptr_param, tComplex *z)
 
 		scanf("%d", &eingabe);
 
-
-		// TODO fraktalvariante fallunterscheidung ob c geaendert werden darf
 		switch(eingabe)
 		{
 
@@ -177,7 +175,8 @@ bool ParamDialog(tParam *ptr_param, tComplex *z)
 			return FALSE;
 
 
-		default: printf("Fehler: Zeile nicht vorhanden.\n");
+		default:
+			printf("Fehler: Zeile nicht vorhanden.\n\n");
 
 		}
 

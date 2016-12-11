@@ -12,26 +12,21 @@
 #include "tComplex.h"
 
 
-
-
+/* Die Funktion "double betrag" gibt den Betrag einer komplexen Zahl zurueck. */
 double betrag (tComplex *a)
 {
 	return (sqrt((a->realteil)*(a->realteil)+(a->imagteil)*(a->imagteil)));
 }
 
-/*
- * double winkel nimmt complexe zahl "a". berechnet den winkel der Zahl. Überprüft dabei, ob der Realteil größer ist als null.
- * ansonsten wird der winkel je nach vorzeichn vom imagteil ausgegeben.
- */
-
-
-double winkel(tComplex *a) // alternative Fkt.
+/* Die Funktion "double winkel" gibt den Winkel phi einer komplexen Zahl zurueck.
+ *(wird in der Aufgabenstellung aber nicht benoetigt.) */
+double winkel(tComplex *a)
 {
-	if(abs(a->realteil) > 10.0e-10) // überprüfung, ob realteil größer als Null
+	if(abs(a->realteil) > 10.0e-10) // Ueberpruefung, ob Realteil groeßer als Null
 		{
-			return (atan((a->imagteil)/(a->realteil))); // gib winkel in RAD
+			return (atan((a->imagteil)/(a->realteil))); // gib Winkel in RAD
 		}
-		else if(a->imagteil>0) // überprüfung, ob imagteil größer Null
+		else if(a->imagteil>0) // Ueberpruefung, ob imagteil groeßer Null
 		{
 			return M_PI/2; // gib pi/2
 		}
@@ -41,33 +36,25 @@ double winkel(tComplex *a) // alternative Fkt.
 		}
 }
 
-/*
- * Funktion gibt den Realteil der komplexen Zahl zurück
- */
-
-tRealteil getRealteil(tComplex *a) // Funkt. um Realteil zurück zu geben
+/* Die Funktion "tRealteil getRealteil" gibt den Realteil der komplexen Zahl zurueck */
+tRealteil getRealteil(tComplex *a)
 {
 	return a->realteil;
 }
 
-/*
- * Funktion gibt den Imagteil der komplexen Zahl zurück
- */
-tImagteil getImagteil(tComplex *a) // Funkt. um Imagteil zurück zu geben
+/* Die Funktion "tImagteil getImagteil" gibt den Imagteil der komplexen Zahl zurück */
+tImagteil getImagteil(tComplex *a)
 {
 	return a->imagteil;
 }
 
-
-
-/* Mit den "set" Funktionen, kann der Real- oder Imagteil gesetzt werden */
-
+/* Die Funktion "void setRealteil" setzt den Realteil der komplexen Zahl. */
 void setRealteil(tRealteil real, tComplex *a)
 {
 	a->realteil = real;
 	//printf("Realteil: %g\n",real);//DEBUG
 }
-
+/* Die Funktion "void setImagteil" setzt den Imagniaerteil der komplexen Zahl. */
 void setImagteil(tImagteil imag, tComplex *a)
 {
 	a->imagteil = imag;

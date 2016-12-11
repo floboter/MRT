@@ -14,7 +14,7 @@
 /* Funktionen */
 
 /* Es können jeweils alle Attribute der Struktur tParam gesetzt oder gelesen werden
- * WICHTIG: Es wird sowhl beim Setzen als auch beim Lesen die Adresse der Struktur benötigt!
+ * WICHTIG: Es wird sowohl beim Setzen als auch beim Lesen die Adresse der Struktur tParam benötigt!
  *
  *  */
 
@@ -99,20 +99,6 @@ ftype getfraktalvariante(tParam *p)
 {
 	return p->fraktalvariante;
 }
-
-/*
-void setnamefraktalvariante(ftype f, tParam *p)
-{
-	p->fraktalvariante = f;
-}
-ftype getnamefraktalvariante(tParam *p)
-{
-	if(p->fraktalvariante == 0)
-	return apfel;
-	else if(p->fraktalvariante == 1)
-	return julia;
-}
-*/
 
 
 /* Testfunktion */

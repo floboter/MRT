@@ -18,9 +18,11 @@ typedef enum
 	julia  // = 1
 } ftype;
 
+/* Die Struktur tParam beschreibt alle Parameter, die fuer die Berechnung eines Fraktals benoetigt werden. */
+
 typedef struct
 {
-	tRadius R; // radius R zur Beschreibung des kreisförmigen gebietes G für komplexe Zahlen
+	tRadius R; // Radius R zur Beschreibung des kreisfoermigen Gebietes G für komplexe Zahlen
 	unsigned int imax; // maximale Iterationszahl
 	double xmin, xmax, ymin, ymax; // Kennzeichnung für das komplexwertige Analysegebiet
 	unsigned int xpoints, ypoints; // Anzahlen für Linien im Analysegebiet
@@ -57,11 +59,6 @@ unsigned int getypoints(tParam *p);
 
 void setfraktalvariante(ftype f, tParam *p);
 ftype getfraktalvariante(tParam *p);
-
-/*
-void setnamefraktalvariante(ftype f, tParam *p);
-char* getnamefraktalvariante(tParam *p);
-*/
 
 
 

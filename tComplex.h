@@ -11,6 +11,8 @@
 typedef double tRealteil; // tRealteil wird als double deklariert, wegen leichterer Änderbarkeit
 typedef double tImagteil; // tImagteil  -                    "						-
 
+
+/* Die Struktur tComplex beschreibt eine komplexe Zahl mit Real- und Imaginaerteil */
 typedef struct
 {
 	tRealteil realteil; // Realteil von tComplex
@@ -18,7 +20,8 @@ typedef struct
 
 } tComplex;
 
-/* Funktionen */
+/* Funktionen.
+ * WICHTIG: Es wird die Adresse einer komplexen Zahl benoetigt. */
 
 double betrag(tComplex *a);  // Funkt. für Berechnung des Betrags
 

@@ -48,8 +48,8 @@ void InputInt (int *value)
 
 /*--- Parameter Dialog ------------------------------------------------------*/
 /* Diese Funktion listet alle Parameter auf.
- * Danach ermöglicht sie nach Eingabe einer Zahl entsprechend der Zeilennummer,
- * den in dieser Zeile stehenden Parameter zu ändern. */
+ * Danach ermoeglicht sie nach Eingabe einer Zahl entsprechend der Zeilennummer,
+ * den in dieser Zeile stehenden Parameter zu aendern. */
 
 
 bool ParamDialog(tParam *ptr_param, tComplex *z)
@@ -85,7 +85,8 @@ bool ParamDialog(tParam *ptr_param, tComplex *z)
 				"Möchten Sie nichts ändern, geben Sie '0' ein\n"
 				"Falls Sie das Programm abbrechen möchten, geben Sie '-1' ein\n");
 
-		scanf("%d", &eingabe);
+
+		scanf("%d", &eingabe); //DEBUG
 
 		switch(eingabe)
 		{

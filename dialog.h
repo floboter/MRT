@@ -11,18 +11,21 @@
 #ifndef __dialog
 #define __dialog
 
-#include "fraktal.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include "tComplex.h"
+#include "tParam.h"
 
-/*--- Parameter Dialog Prototyp --------------------------------------------*/
 /*--- Definitionen ---------------------------------------------------------*/
 
 typedef enum {FALSE, TRUE} bool;
+
+/*--- Parameter Dialog ------------------------------------------------------*/
+
 bool ParamDialog(tParam *ptr_param, tComplex *z);
 
 /*--- Funktion zum einlesen des ersten Characters einer getchar() Eingabe --*/
 char InputChar();
-void InputDouble (double *value);
-void InputInt (int *value);
 
 #endif
 

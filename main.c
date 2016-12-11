@@ -55,7 +55,7 @@ int main (void)
   	/*--- Parameter über Dialog abfragen                                  --*/
   	/*----------------------------------------------------------------------*/
 
-	printf("ParamDialog wird ausgefuehrt\n");
+	printf("ParamDialog wird ausgefuehrt\n\n");
 
 	bool programmstatus = ParamDialog(&parameter, &c1); // bool programmstatus gibt an, ob Nutzer Programm beendet oder OK gegeben hat
 
@@ -70,30 +70,28 @@ int main (void)
 
 
 		LockScreen(); // Bildschirm muss zum Setzen von Pixeln gesperrt sein
+
 		/*----------------------------------------------------------------------*/
-		/*--- Fraktale berechnen und ausgeben                                 --*/
-		/*---------------*/
-		printf("Fraktale werden berechnet\n");
+		/*-------------------Fraktale berechnen und ausgeben--------------------*/
+		/*----------------------------------------------------------------------*/
 
 		Fraktal(&c1,&z1,&parameter);
-
-
-
+		printf("Fraktale wurden berechnet\n");
 
 		UnlockScreen(); // Alle Änderungen auf Bildschirm ausgeben
 	}
 	else if(programmstatus == 0)
 	{
-		return EXIT_FAILURE;
+		return 0;
 	}
-
-
 
 	/*Aufrufen von InputChar() um das Programm nach dem öffnen der Graphik   */
 	/*anzuhalten. Erst wenn in der Konsole eine Taste gedrückt wird, schließt*/
 	/*sich das Fenster wieder. */
 
 	//InputChar(); // ist zwar vorgegebene Funkt. geht aber nicht
+
+
 
 	int grafikschliessen = 0;
 	printf("Um die Grafik zu schliessen, druecken Sie: 1\n");
@@ -105,13 +103,10 @@ int main (void)
 		{
 			CloseGraph();
 			printf("Programm beendet.\n");
-		}else
-			printf("Falsche Eingabe.\n");
+		}
+		else
+		printf("Falsche Eingabe.\n");
 	}
-
-
-
-
 
 	return 0;
 }

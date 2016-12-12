@@ -59,11 +59,17 @@ bool ParamDialog(tParam *ptr_param, tComplex *z)
 	int eingabe = 0; // eingabevariable
 	double dtemp; // temporaere double Zahl
 	unsigned int uitemp; // temporaere unsigned int Zahl
-
+	int fehlercnt = 0;
 
 	while(c == 0)
 	{
 		cnt = 1;
+
+		if(fehlercnt > 0)
+		{
+			printf("Fehler: Zeile nicht vorhanden!\n\n");
+		}
+
 		printf("Es folgen alle Parameter, die definiert wurden.\n"
 				"Geben Sie die Zeilennummer (Zahl in der Klammer) ein,\n"
 				"um den entsprechenden Parameter zu aendern.\n\n");
@@ -82,11 +88,11 @@ bool ParamDialog(tParam *ptr_param, tComplex *z)
 
 		printf("\nWelchen Parameter wollen Sie aendern?\n"
 				"Geben Sie die Zeilennummer ein.\n"
-				"Möchten Sie nichts ändern, geben Sie '0' ein\n"
-				"Falls Sie das Programm abbrechen möchten, geben Sie '-1' ein\n");
+				"Möchten Sie nichts ändern, geben Sie '0' ein.\n"
+				"Falls Sie das Programm abbrechen möchten, geben Sie '-1' ein.\n");
 
 
-		scanf("%d", &eingabe); //DEBUG
+		scanf("%d", &eingabe);
 
 		switch(eingabe)
 		{
@@ -99,7 +105,7 @@ bool ParamDialog(tParam *ptr_param, tComplex *z)
 				break;
 			}
 			*/
-			printf("Wert für den Realteil von c: \n");
+			printf("Wert für den Realteil von c: ");
 			scanf("%lf", &dtemp);
 			z->realteil = (tRealteil)dtemp;
 			break;
@@ -110,22 +116,22 @@ bool ParamDialog(tParam *ptr_param, tComplex *z)
 						"Imagteil fuer c = 0.4 (Initialwert)\n");
 				break;
 			}*/
-			printf("Wert für den Imaginaerteil von c: \n");
+			printf("Wert für den Imaginaerteil von c: ");
 			scanf("%lf", &dtemp);
 			z->imagteil = (tImagteil)dtemp;
 			break;
 		case 3:
-			printf("Wert für den Radius R: \n");
+			printf("Wert für den Radius R: ");
 			scanf("%lf", &dtemp);
 			setRadius((tRadius)dtemp, ptr_param);
 			break;
 		case 4:
-			printf("Wert für maximale Anzahl der Iterationen: \n");
+			printf("Wert für maximale Anzahl der Iterationen: ");
 			scanf("%d", &uitemp);
 			setimax(uitemp, ptr_param);
 			break;
 		case 5:
-			printf("Wert für Fraktalvariante (0 = apfel, 1 = julia): \n");
+			printf("Wert für Fraktalvariante (0 = apfel, 1 = julia): ");
 			scanf("%d", &uitemp);
 			if(uitemp == 0 || uitemp == 1)
 			{
@@ -134,32 +140,32 @@ bool ParamDialog(tParam *ptr_param, tComplex *z)
 			else printf("Eingabe falsch! (0 = apfel, 1 = julia)\n");
 			break;
 		case 6:
-			printf("Wert für xmin: \n");
+			printf("Wert für xmin: ");
 			scanf("%lf", &dtemp);
 			setxmin(dtemp, ptr_param);
 			break;
 		case 7:
-			printf("Wert für xmax: \n");
+			printf("Wert für xmax: ");
 			scanf("%lf", &dtemp);
 			setxmax(dtemp, ptr_param);
 			break;
 		case 8:
-			printf("Wert für ymin: \n");
+			printf("Wert für ymin: ");
 			scanf("%lf", &dtemp);
 			setymin(dtemp, ptr_param);
 			break;
 		case 9:
-			printf("Wert für ymax: \n");
+			printf("Wert für ymax: ");
 			scanf("%lf", &dtemp);
 			setymax(dtemp, ptr_param);
 			break;
 		case 10:
-			printf("Wert für xpoints: \n");
+			printf("Wert für xpoints: ");
 			scanf("%lf", &dtemp);
 			setxpoints(dtemp, ptr_param);
 			break;
 		case 11:
-			printf("Wert für ypoints: \n");
+			printf("Wert für ypoints: ");
 			scanf("%lf", &dtemp);
 			setypoints(dtemp, ptr_param);
 			break;
@@ -171,10 +177,8 @@ bool ParamDialog(tParam *ptr_param, tComplex *z)
 			c = 1;
 			printf("Programmabbruch\n");
 			return FALSE;
-
-
 		default:
-			printf("Fehler: Zeile nicht vorhanden.\n\n");
+			fehlercnt++;
 
 		}
 

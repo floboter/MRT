@@ -13,40 +13,6 @@
 #include "tParam.h"
 #include "tComplex.h"
 
-
-
-/*--- Interne Funktion: Analyse der Iterationsanzahl -----------------------*/
-/*int GetItera(tComplex c, tComplex z, tParam p){ //Wichtig, dass return int.
-	int itera;
-	return itera;
-
-}
-*/
-/*--- Interne Funktion: Farbwert bestimmen ---------------------------------*/
-/*tColor GetColorValue(int it, int it_max){
-
-	tColor it_rueckgabe;
-
-	if (it>it_max){
-		it_rueckgabe=0; 		//Null Entspricht schwarz, lt. Anforderung
-	}
-	else {
-	it_rueckgabe= (tColor)(it%15+1); //Sonst Farbe ungleich schwarz wählen
-
-	}
-	return it_rueckgabe;			//Gibt Farbe vom Typ tColor zurück
-}
-*/
-/*--- Fraktal-Figur analysieren und zeichnen -------------------------------*/
-/*
-
-void Fraktal(tComplex *c, tComplex *z, tParam *p){
-
-printf("%d",5);
-
-
-}
-*/
 /*--- Interne Funktion: Analyse der Iterationsanzahl -----------------------*/
 
 int GetItera(tComplex *c, tComplex *z, tParam *param){
@@ -103,6 +69,7 @@ void Fraktal(tComplex *c, tComplex *z, tParam *p){
 		  // printf("Position: %g %g \n",a,b);//DEBUG
 
 		  int i = GetItera(c,z,p);
+		  //  printf("%d",getfraktalvariante(p)); //DEBUG
 
 		  if(getfraktalvariante(p)==apfel){
 			  setRealteil(a,c);
@@ -125,5 +92,36 @@ void Fraktal(tComplex *c, tComplex *z, tParam *p){
 	  x++;
   }
 }
+/*---------------Testfunktionen Fraktal-------------*/
 
+void tGetColorValue(int i, int imax){ //Testet Funktionalität der Fkt. GetColorValue
+	tColor testColor= GetColorValue(i,imax);
+	printf("Eingabewerte sind: i=%d imax=%d \nDie dazugehörige Farbzahl ist: (Typ tColor) %lf",i,imax, (double)testColor);
+
+}
+
+void tGetItera(){ //Testet Funktionalität GetItera
+
+	tParam testParam;
+	tComplex testC, testZ;
+
+	testParam.fraktalvariante = julia;
+	testParam.R = 4;
+	testParam.xmin = -2;
+	testParam.xmax = 2;
+	testParam.ymin = -2;
+	testParam.ymax = 2;
+	testParam.imax = 75;
+	testParam.xpoints = 1024;
+	testParam.ypoints = 720;
+
+	testC.realteil = 0.4;
+	testC.imagteil = 0.4;
+	testZ.realteil = 0;
+	testZ.imagteil = 0;
+
+	int testIt= GetItera(&testC,&testZ,&testParam);
+	printf("Die Iteration hat bei %d abgebrochen. \n", testIt);
+}
+/*ENDE Testfunktionen*/
 /* v3_frakt.c */

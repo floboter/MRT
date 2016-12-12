@@ -19,14 +19,17 @@
 
 int main (void)
 {
-	/* Testfunktionen */
+	/*------ Testfunktionen------- */
 
+	// tGetColorValue(5,6);
 	// tComplextesten();
 	// tParamtesten();
-
+	// tGetItera();
 	// ParamDialog();
 
-	// return 0;
+	 //return 0;	//WICHTIG!
+
+	/*----ENDE Testfunktionen- ---*/
 
 	/*--- Variablendeklaration ---------------------------------------------*/
 
@@ -74,7 +77,7 @@ int main (void)
 		/*----------------------------------------------------------------------*/
 		/*-------------------Fraktale berechnen und ausgeben--------------------*/
 		/*----------------------------------------------------------------------*/
-
+		printf("LockScreen() beendet. Fraktale werden berechnet. \n");
 		Fraktal(&c1,&z1,&parameter);
 		printf("Fraktale wurden berechnet\n");
 

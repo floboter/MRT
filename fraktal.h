@@ -12,12 +12,19 @@
 #include "tComplex.h"
 #include "tParam.h"
 
-/*--- Datentypvereinbarungen -----------------------------------------------*/
+/*--- Iterationswert berechnen --------------------------*/
 int GetItera( tComplex *c, tComplex *z, tParam *param);
+
+/*--- Farbwert anhand Iteration berechnen --------------------------*/
 tColor GetColorValue(int it, int it_max);
 
 /*--- Fraktal analysieren und grafisch darstellen --------------------------*/
 void Fraktal( tComplex *c, tComplex *z, tParam *p);
+
+/*--- Testfunktionen --------------------------*/
+
+void tGetItera();
+void tGetColorValue(int i, int imax);
 
 #endif
 

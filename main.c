@@ -44,7 +44,7 @@ int main (void)
 	parameter.ymax = 2;
 	parameter.imax = 75;
 	parameter.xpoints = 1024; // Geaendert vom vorgegebenen Initialwert (Streifen in Ausgabe)
-	parameter.ypoints = 720; // Geaendert vom vorgegebenen Initialwert (Streifen in Ausgabe)
+	parameter.ypoints = 768; // Geaendert vom vorgegebenen Initialwert (Streifen in Ausgabe)
 
 	c1.realteil = 0.4;
 	c1.imagteil = 0.4;
